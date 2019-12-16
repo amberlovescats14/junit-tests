@@ -9,6 +9,7 @@ import java.util.Scanner;
 import static org.junit.Assert.*;
 
 public class StudentTest {
+    //! MVN TEST
     private Student student1;
     private Student student2;
     private Student student3;

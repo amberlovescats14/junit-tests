@@ -62,10 +62,10 @@ public class Student implements I_Student{
             return new int[0];
         }
         try {
-            if(!grades.contains(oldGrade)) throw new Exception();
+        if(!grades.contains(oldGrade)) throw new Exception();
 
-            int index = grades.lastIndexOf(oldGrade);
-            grades.set(index, newGrade);
+        int index = grades.lastIndexOf(oldGrade);
+        grades.set(index, newGrade);
         } catch(Exception ex) {
             System.out.printf("ERROR: %s\n", ex);
         }

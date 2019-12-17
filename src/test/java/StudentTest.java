@@ -1,3 +1,4 @@
+
 import org.hamcrest.core.IsInstanceOf;
 import org.junit.Assert;
 import org.junit.Before;
@@ -6,9 +7,11 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 import static org.junit.Assert.*;
 
 public class StudentTest {
+
     //! MVN TEST
     private Student student1;
     private Student student2;
@@ -105,3 +108,4 @@ public class StudentTest {
 
 
 }
+

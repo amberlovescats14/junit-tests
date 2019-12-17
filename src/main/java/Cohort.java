@@ -10,6 +10,7 @@ public class Cohort {
     }
 
     public double getCohortAverage() {
+        if(students.size() == 0) return 0;
         double avg = 0;
         for (Student student: this.getStudents()) {
             avg += student.getGradeAverage();

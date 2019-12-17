@@ -8,9 +8,8 @@ public class Student implements I_Student{
     private String name;
     private ArrayList<Integer> grades = new ArrayList<>();
 
-    public Student(String name) {
-        Random id = new Random();
-        this.id = id.nextLong();
+    public Student(String name, long id) {
+        this.id = id;
         this.name = name;
     }
     //z: Change to primitive

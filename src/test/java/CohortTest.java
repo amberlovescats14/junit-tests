@@ -10,85 +10,67 @@ public class CohortTest {
     private Cohort cohort1;
     private Cohort cohort2;
     private Cohort cohort3;
-    private Student student1;
-    private Student student2;
-    private Student student3;
-    private Student student4;
-    private Student student5;
-    private Student student6;
 
 
     @Before
     public void
     setup(){
-        this.student1 = new Student(1, "Amber"){{
-            addGrade(100);
-            addGrade(100);
-            addGrade(100);
-        }};
-        this.student2 = new Student(1, "Cami"){{
-            addGrade(100);
-            addGrade(100);
-            addGrade(100);
-        }};
-        this.student3 = new Student(1, "Mason"){{
-            addGrade(100);
-            addGrade(100);
-            addGrade(100);
-        }};
-        this.cohort1 = new Cohort(){{
-            addStudent(student1);
-            addStudent(student2);
-            addStudent(student3);
-        }};
 
-        var student4 = new Student(1, "Nicole"){{
-            addGrade(80);
-            addGrade(80);
-            addGrade(80);
+        this.cohort1 = new Cohort(){{
+            addStudent("Amber");
+            addStudent("Cami");
+            addStudent("Mason");
         }};
-        var student5 = new Student(1, "Michelle"){{
-            addGrade(80);
-            addGrade(80);
-            addGrade(80);
-        }};
-        var student6 = new Student(1, "Charles"){{
-            addGrade(80);
-            addGrade(80);
-            addGrade(80);
-        }};
+        //6
+        cohort1.addGrade("Amber", 100);
+        cohort1.addGrade("Amber", 100);
+        cohort1.addGrade("Amber", 100);
+        cohort1.addGrade("Mason", 100);
+        cohort1.addGrade("Mason", 100);
+        cohort1.addGrade("Cami", 100);
+
+
+
+
         this.cohort2 = new Cohort(){{
-            addStudent(student4);
-            addStudent(student5);
-            addStudent(student6);
+            addStudent("Nicole");
+            addStudent("Michelle");
+            addStudent("Charles");
         }};
+        cohort2.addGrade("Nicole", 80);
+        cohort2.addGrade("Nicole", 80);
+        cohort2.addGrade("Nicole", 80);
+        cohort2.addGrade("Michelle", 80);
+        cohort2.addGrade("Michelle", 80);
+        cohort2.addGrade("Charles", 80);
 
         this.cohort3 = new Cohort();
+    }
 
+    //z: end setup
 
+    @Test
+    public void
+    testAddStudent(){
+        assertEquals(3, cohort1.getStudents().size());
+        assertEquals(3, cohort2.getStudents().size());
+        assertEquals(0, cohort3.getStudents().size());
     }
 
     @Test
     public void
     testAverage(){
-        double average1 = (
-                student1.getGradeAverage() +
-                student2.getGradeAverage() +
-                student3.getGradeAverage()
-                )    /3;
-        assertEquals(average1, cohort1.getCohortAverage(), 0);
 
-        double average2 = (
-                student3.getGradeAverage() +
-                student4.getGradeAverage() +
-                student5.getGradeAverage()
-                ) / 3;
+        assertEquals(100, cohort1.getCohortAverage(), 0);
+
+        double average2 = (((80*3)/3) + ((80+80)/2) + 80) /3;
         assertEquals(average2, cohort2.getCohortAverage(), 0);
-
 
         assertEquals(0, cohort3.getCohortAverage(), 0);
 
 
     }
+
+
 
 }

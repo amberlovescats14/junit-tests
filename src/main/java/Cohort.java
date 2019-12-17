@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cohort {
-
+    private static long id = 0;
     private List<Student> students;
 
     public Cohort() {
@@ -18,8 +18,15 @@ public class Cohort {
         return avg / this.getStudents().size();
     }
 
-    public void addStudent(Student student){
-        students.add(student);
+    public void addStudent(String name){
+        students.add(new Student(name, id++));
+    }
+
+    public void addGrade(String name, int grade){
+        for (Student student : students) {
+            if(student.getName().equalsIgnoreCase(name))
+                student.addGrade(grade);
+        }
     }
 
     public List<Student> getStudents() {

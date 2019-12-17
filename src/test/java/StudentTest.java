@@ -19,7 +19,7 @@ public class StudentTest {
 
     @Before
     public void setup(){
-        this.student1 = new Student("Amber");
+        this.student1 = new Student("Amber", 1);
         student1.addGrade(90);
         student1.addGrade(100);
         student1.addGrade(100);
@@ -27,11 +27,11 @@ public class StudentTest {
         student1.addGrade(100);
         student1.addGrade(100);
 
-        this.student2 = new Student("Cami");
+        this.student2 = new Student("Cami", 2);
         student2.addGrade(80);
         student2.addGrade(80);
 
-        this.student3 = new Student("Mason");
+        this.student3 = new Student("Mason", 3);
     }
 
     @Test
